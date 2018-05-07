@@ -22,7 +22,7 @@ export class ContactoComponent implements OnInit {
   }
 
   createForm() {
-    this.contactoForm = this.formBuilder.group({
+    this.contactoForm = this.formBuilder.group( {
       nombre: ['', Validators.required],
       asunto: ['', Validators.required],
       mensaje: ['', Validators.required],
@@ -33,7 +33,7 @@ export class ContactoComponent implements OnInit {
 
   doContact() {
     console.log('Form: ', this.contactoForm);
-    if(!this.contactoForm.valid){
+    if (!this.contactoForm.valid) {
       this.showMessages();
       console.log('Error: ', this.errorMessages);
       return;
