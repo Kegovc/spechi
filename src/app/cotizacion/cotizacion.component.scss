@@ -1,0 +1,29 @@
+h2{
+    font-size: 4rem !important;
+    @media screen  and (max-width: 767px) {
+  
+    font-size: 2rem !important;
+    }
+    @media screen  and (max-width: 867px) {
+  
+    font-size: 3rem !important;
+    }
+  }
+  h3{
+    font-size: 2.5rem !important;
+    @media screen  and (max-width: 767px) {
+  
+    font-size: 1rem !important;
+    }
+    @media screen  and (max-width: 867px) {
+  
+    font-size: 2rem !important;
+    }
+  }
+  
+  .logo_white{
+    left: 0;
+    height: 44px;
+    position: absolute;
+  }
+  

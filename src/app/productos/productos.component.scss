@@ -1,0 +1,52 @@
+h2{
+  font-size: 4rem !important;
+  @media screen  and (max-width: 767px) {
+
+  font-size: 2rem !important;
+  }
+  @media screen  and (max-width: 867px) {
+
+  font-size: 3rem !important;
+  }
+}
+h3{
+  font-size: 2.5rem !important;
+  @media screen  and (max-width: 767px) {
+
+  font-size: 1rem !important;
+  }
+  @media screen  and (max-width: 867px) {
+
+  font-size: 2rem !important;
+  }
+}
+
+.logo_white{
+  left: 0;
+  height: 44px;
+  position: absolute;
+}
+
+
+.producto{
+  padding: 40px 0px;
+  .row{
+    font-size: 44px;
+    .logo_produc{
+      right: 0;
+      height: 100px;
+      position: absolute;
+      @media screen  and (max-width: 670px) {
+        height: 70px;
+        }
+    }
+  }
+  iframe{
+    width: 560px;
+    height: 315px;
+    @media screen  and (max-width: 630px) {
+      width: 290px;
+      height: 163px;
+    }
+  }
+}

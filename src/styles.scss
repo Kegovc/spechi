@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+$spechi-color: #6c101c;
+$spechi-font-family: Trocchi;
+
+body{
+  background-color: $spechi-color !important;
+  font-family: $spechi-font-family !important;
+}

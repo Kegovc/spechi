@@ -1,16 +1,39 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { CarouselModule } from 'ngx-bootstrap';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ContainerComponent } from './container/container.component';
+import { CarouselNoPauseComponent } from './carousel-no-pause/carousel-no-pause.component';
+import { ProductosComponent } from './productos/productos.component';
+import { NovedadesComponent } from './novedades/novedades.component';
+import { SafePipe } from './shared/pipes/safe.pipe';
+import { ContactoComponent } from './contacto/contacto.component';
+import { CotizacionComponent } from './cotizacion/cotizacion.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    ContainerComponent,
+    CarouselNoPauseComponent,
+    ProductosComponent,
+    NovedadesComponent,
+    SafePipe,
+    ContactoComponent,
+    CotizacionComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CarouselModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

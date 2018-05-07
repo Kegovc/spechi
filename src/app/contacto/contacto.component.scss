@@ -1,0 +1,47 @@
+h2{
+    font-size: 4rem !important;
+    @media screen  and (max-width: 767px) {
+
+    font-size: 2rem !important;
+    }
+    @media screen  and (max-width: 867px) {
+
+    font-size: 3rem !important;
+    }
+  }
+  h3{
+    font-size: 2.5rem !important;
+    @media screen  and (max-width: 767px) {
+
+    font-size: 1rem !important;
+    }
+    @media screen  and (max-width: 867px) {
+
+    font-size: 2rem !important;
+    }
+  }
+
+  .logo_white{
+    left: 0;
+    height: 44px;
+    position: absolute;
+  }
+
+  div{
+    .send-btn{
+      border: 0px;
+      width:  125px;
+      height: 125px;
+      @media screen  and (min-width: 867px) {
+        bottom: 0px;
+        position: absolute;
+        left: 0;
+        background-image: url('../../assets/img/send.png');
+        background-size: 125px;
+        background-color: transparent;
+      }
+      background-image: url('../../assets/img/send.png');
+      background-size: 125px;
+      background-color: transparent;
+    }
+  }
