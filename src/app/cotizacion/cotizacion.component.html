@@ -3,23 +3,22 @@
   &nbsp;
 </div>
 <h2>Cotización</h2>
-<form (submit)="doContact()" >
+<form (submit)="doContact()" [formGroup]="contizacionForm" >
   <div class="row">
       <div class="col-2">
-
       </div>
       <div class="col-8">
           <div class="row">
               <div class="col-lg-6 col-sm-12">
                   <div class="form-group">
                       <label for="nombre">Nombre y puesto</label>
-                      <input style="text-align: center;"  type="text" class="form-control" [(ngModel)]="data.nombre" name="nombre"  id="nombre"  placeholder="Nombre y puesto">
+                      <input style="text-align: center;"  type="text" class="form-control" [(ngModel)]="data.nombre" name="nombre"  formControlName="nombre" id="nombre"  placeholder="Nombre y puesto">
                     </div>
               </div>
               <div class="col-lg-6 col-sm-12">
                   <div class="form-group">
                       <label for="correo">Correo</label>
-                      <input style="text-align: center;"  type="email" class="form-control" [(ngModel)]="data.correo" name="correo"  id="correo"  placeholder="Correo">
+                      <input style="text-align: center;"  type="email" class="form-control" [(ngModel)]="data.correo" name="correo"  formControlName="correo" id="correo"  placeholder="Correo">
                     </div>
               </div>
           </div>
@@ -27,13 +26,13 @@
               <div class="col-lg-6 col-sm-12">
                   <div class="form-group">
                       <label for="tel">Telefono</label>
-                      <input style="text-align: center;"  type="tel" class="form-control" [(ngModel)]="data.tel" name="tel"     id="tel"     placeholder="Telefono">
+                      <input style="text-align: center;"  type="tel" class="form-control" [(ngModel)]="data.tel" name="tel"     formControlName="tel" id="tel"     placeholder="Telefono">
                     </div>
               </div>
               <div class="col-lg-6 col-sm-12">
                   <div class="form-group">
                       <label for="giro">Giro de la empresa</label>
-                      <input style="text-align: center;"  type="text" class="form-control" [(ngModel)]="data.giro" name="giro"  id="giro"  placeholder="Giro de la empresa">
+                      <input style="text-align: center;"  type="text" class="form-control" [(ngModel)]="data.giro" name="giro"  formControlName="giro"    id="giro"  placeholder="Giro de la empresa">
                     </div>
               </div>
           </div>
@@ -41,14 +40,13 @@
               <div class="col">
                   <div class="form-group">
                       <label for="descripcion">Descripcion de la necesidad:</label>
-                      <textarea style="text-align: center;" class="form-control" [(ngModel)]="data.descripcion" name="descripcion" id="descripcion"  placeholder="descripcion"></textarea>
+                      <textarea style="text-align: center;" class="form-control" [(ngModel)]="data.descripcion" name="descripcion" formControlName="descripcion" id="descripcion"  placeholder="Descripcion ..."></textarea>
                     </div>
               </div>
           </div>
       </div>
       <div class="col-lg-2 col-sm-12">
         <button class="send-btn" >
-
         </button>
       </div>
     </div>

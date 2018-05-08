@@ -30,18 +30,18 @@ h2{
   div{
     .send-btn{
       border: 0px;
-      width:  125px;
-      height: 125px;
+      width:  80px;
+      height: 80px;
       @media screen  and (min-width: 867px) {
         bottom: 0px;
         position: absolute;
         left: 0;
         background-image: url('../../assets/img/send.png');
-        background-size: 125px;
+        background-size: 80px;
         background-color: transparent;
       }
       background-image: url('../../assets/img/send.png');
-      background-size: 125px;
+      background-size: 80px;
       background-color: transparent;
     }
   }

@@ -41,7 +41,7 @@ export class ContactoComponent implements OnInit {
     // tslint:disable-next-line:one-line
     else {
       // tslint:disable-next-line:prefer-const
-      let str_href = `mailto:contacto@spechi.com?subject=${encodeURI(this.data.asunto)}&body=${encodeURI(`${this.data.mensaje}
+      const str_href = `mailto:contacto@spechi.com?subject=${encodeURI(this.data.asunto)}&body=${encodeURI(`${this.data.mensaje}
       contacto:
       nombre:   ${this.data.nombre}
       correo:   ${this.data.correo}
