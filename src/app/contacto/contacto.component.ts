@@ -11,8 +11,6 @@ export class ContactoComponent implements OnInit {
   public data: any = {};
   public contactoForm: FormGroup;
   public errorMessages: any = {};
-
-
   constructor(
     private formBuilder: FormBuilder
   ) { }
@@ -27,16 +25,31 @@ export class ContactoComponent implements OnInit {
       asunto: ['', Validators.required],
       mensaje: ['', Validators.required],
       correo: ['', [Validators.required, Validators.email]],
-      tel: ['', [Validators.required, Validators.pattern('[0-9]{8,}')]]
+      tel: ['', [Validators.required, Validators.pattern('\\+?[0-9]{8,}')]]
     });
   }
 
   doContact() {
+    // tslint:disable-next-line:no-var-keyword
+    var b: any;
     console.log('Form: ', this.contactoForm);
     if (!this.contactoForm.valid) {
       this.showMessages();
       console.log('Error: ', this.errorMessages);
       return;
+    }
+    // tslint:disable-next-line:one-line
+    else {
+      // tslint:disable-next-line:prefer-const
+      let str_href = `mailto:contacto@spechi.com?subject=${encodeURI(this.data.asunto)}&body=${encodeURI(`${this.data.mensaje}
+      contacto:
+      nombre:   ${this.data.nombre}
+      correo:   ${this.data.correo}
+      telefono: ${this.data.tel}`)}`;
+      b = document.createElement('a');
+      b.setAttribute('href', str_href);
+      b.innerHTML  = 'test value';
+      b.click();
     }
   }
 

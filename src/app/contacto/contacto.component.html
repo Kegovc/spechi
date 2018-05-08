@@ -3,7 +3,8 @@
   &nbsp;
 </div>
 <h2>Contacto</h2>
-<form (submit)="doContact()" >
+<form (submit)="doContact()" [formGroup]="contactoForm" >
+
   <div class="row">
       <div class="col-2">
 
@@ -13,13 +14,13 @@
               <div class="col-lg-6 col-sm-12">
                   <div class="form-group">
                       <label for="nombre">Nombre</label>
-                      <input style="text-align: center;"  type="text" class="form-control" [(ngModel)]="data.nombre" name="nombre"  id="nombre"  placeholder="Nombre">
+                      <input style="text-align: center;"  type="text" class="form-control" [(ngModel)]="data.nombre" name="nombre" formControlName="nombre"   id="nombre"  placeholder="Nombre">
                     </div>
               </div>
               <div class="col-lg-6 col-sm-12">
                   <div class="form-group">
                       <label for="correo">Correo</label>
-                      <input style="text-align: center;"  type="email" class="form-control" [(ngModel)]="data.correo" name="correo"  id="correo"  placeholder="Correo">
+                      <input style="text-align: center;"  type="email" class="form-control" [(ngModel)]="data.correo" name="correo" formControlName="correo"   id="correo"  placeholder="Correo">
                     </div>
               </div>
           </div>
@@ -27,13 +28,13 @@
               <div class="col-lg-6 col-sm-12">
                   <div class="form-group">
                       <label for="tel">Telefono</label>
-                      <input style="text-align: center;"  type="tel" class="form-control" [(ngModel)]="data.tel" name="tel"     id="tel"     placeholder="Telefono">
+                      <input style="text-align: center;"  type="tel" class="form-control" [(ngModel)]="data.tel" name="tel"    formControlName="tel"      id="tel"     placeholder="Telefono">
                     </div>
               </div>
               <div class="col-lg-6 col-sm-12">
                   <div class="form-group">
                       <label for="asunto">Asunto</label>
-                      <input style="text-align: center;"  type="text" class="form-control" [(ngModel)]="data.asunto" name="asunto"  id="asunto"  placeholder="Asunto">
+                      <input style="text-align: center;"  type="text" class="form-control" [(ngModel)]="data.asunto" name="asunto" formControlName="asunto"   id="asunto"  placeholder="Asunto">
                     </div>
               </div>
           </div>
@@ -41,7 +42,7 @@
               <div class="col">
                   <div class="form-group">
                       <label for="mensaje">Mensaje:</label>
-                      <textarea style="text-align: center;" class="form-control" [(ngModel)]="data.mensaje" name="mensaje" id="mensaje"  placeholder="Mensaje"></textarea>
+                      <textarea style="text-align: center;" class="form-control" [(ngModel)]="data.mensaje" name="mensaje" formControlName="mensaje" id="mensaje"  placeholder="Mensaje"></textarea>
                     </div>
               </div>
           </div>
