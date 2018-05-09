@@ -37,8 +37,8 @@ export class CotizacionComponent implements OnInit {
     // tslint:disable-next-line:no-var-keyword
     var b: any;
     console.log('Form: ', this.contizacionForm);
+    this.showMessages();
     if (!this.contizacionForm.valid) {
-      this.showMessages();
       console.log('Error: ', this.errorMessages);
       return;
     }

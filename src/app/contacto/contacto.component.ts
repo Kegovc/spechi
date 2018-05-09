@@ -33,8 +33,8 @@ export class ContactoComponent implements OnInit {
     // tslint:disable-next-line:no-var-keyword
     var b: any;
     console.log('Form: ', this.contactoForm);
+    this.showMessages();
     if (!this.contactoForm.valid) {
-      this.showMessages();
       console.log('Error: ', this.errorMessages);
       return;
     }

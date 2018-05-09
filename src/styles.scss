@@ -6,3 +6,11 @@ body{
   background-color: $spechi-color !important;
   font-family: $spechi-font-family !important;
 }
+input, textarea{
+  &.is-invalid{
+    background-color: #f96d6d;
+  }
+  &.is-valid{
+    background-color: #67ff67;
+  }
+}

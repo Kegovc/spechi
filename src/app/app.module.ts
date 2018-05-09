@@ -14,6 +14,7 @@ import { NovedadesComponent } from './novedades/novedades.component';
 import { SafePipe } from './shared/pipes/safe.pipe';
 import { ContactoComponent } from './contacto/contacto.component';
 import { CotizacionComponent } from './cotizacion/cotizacion.component';
+import { ValidatedInputDirective } from './shared/directives/validated-input.directive';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { CotizacionComponent } from './cotizacion/cotizacion.component';
     NovedadesComponent,
     SafePipe,
     ContactoComponent,
-    CotizacionComponent
+    CotizacionComponent,
+    ValidatedInputDirective
   ],
   imports: [
     BrowserModule,
