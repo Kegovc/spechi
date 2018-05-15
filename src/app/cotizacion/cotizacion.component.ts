@@ -46,7 +46,7 @@ export class CotizacionComponent implements OnInit {
     else {
       // tslint:disable-next-line:prefer-const
       // tslint:disable-next-line:max-line-length
-      const str_href = `mailto:cotizacion@spechi.com?subject=Cotización para ${encodeURI(this.data.giro)}&body=${encodeURI(`${this.data.descripcion}
+      const str_href = `mailto:contacto@spechi.com?subject=Cotización para ${encodeURI(this.data.giro)}&body=${encodeURI(`${this.data.descripcion}
       contacto:
       nombre:   ${this.data.nombre}
       correo:   ${this.data.correo}
