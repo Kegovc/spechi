@@ -1,5 +1,7 @@
+import { ContactoService } from './../shared/services/contacto.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { environment } from '../../environments/environment';
 
 
 @Component({
@@ -16,7 +18,8 @@ export class CotizacionComponent implements OnInit {
 
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private contactoService: ContactoService
   ) { }
 
   ngOnInit() {
@@ -35,7 +38,7 @@ export class CotizacionComponent implements OnInit {
 
   doContact() {
     // tslint:disable-next-line:no-var-keyword
-    var b: any;
+
     console.log('Form: ', this.contizacionForm);
     this.showMessages();
     if (!this.contizacionForm.valid) {
@@ -51,10 +54,27 @@ export class CotizacionComponent implements OnInit {
       nombre:   ${this.data.nombre}
       correo:   ${this.data.correo}
       telefono: ${this.data.tel}`)}`;
-      b = document.createElement('a');
-      b.setAttribute('href', str_href);
-      b.innerHTML  = 'test value';
-      b.click();
+      const _data = {
+        correo: `${this.data.correo}`,
+        asunto: `Cotización para ${this.data.giro}`,
+        mensaje: `${this.data.descripcion}
+        contacto:
+        nombre:   ${this.data.nombre}
+        correo:   ${this.data.correo}
+        telefono: ${this.data.tel}`
+
+      };
+      this.contactoService.sendMail('contacto', _data)
+      .then(response => {
+        if (environment.debug) { console.log(response); }
+        if (!response.fun.access) {
+          let b: any;
+          b = document.createElement('a');
+          b.setAttribute('href', str_href);
+          b.innerHTML  = 'test value';
+          b.click();
+        }
+      });
     }
   }
 

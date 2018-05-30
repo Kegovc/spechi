@@ -9,7 +9,7 @@ export class SliteService {
     private http: Http
   ) { }
   getSlites() {
-    return this.http.get(`${environment.api}slites`)
+    return this.http.get(`${environment.api}?app=slites`)
     .map(response => response.json())
     .toPromise();
   }

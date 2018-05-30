@@ -18,6 +18,7 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { CotizacionComponent } from './cotizacion/cotizacion.component';
 import { ValidatedInputDirective } from './shared/directives/validated-input.directive';
 import { SliteService } from './shared/services/slite.service';
+import { ContactoService } from './shared/services/contacto.service';
 
 
 @NgModule({
@@ -42,7 +43,10 @@ import { SliteService } from './shared/services/slite.service';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
   ],
-  providers: [SliteService],
+  providers: [
+    SliteService,
+    ContactoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

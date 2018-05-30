@@ -19,7 +19,6 @@ export class ValidatedInputDirective implements AfterViewChecked {
     if (this.validatedInput == null) {
       return;
     }
-    console.log(arr);
     if (!this.validatedInput) {
       this.removeClassName('is-invalid');
       this.addClassName('is-valid');

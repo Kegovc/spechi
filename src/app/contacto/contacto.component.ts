@@ -1,5 +1,7 @@
+import { ContactoService } from './../shared/services/contacto.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { environment } from '../../environments/environment.prod';
 
 @Component({
   selector: 'app-contacto',
@@ -8,11 +10,18 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class ContactoComponent implements OnInit {
 
-  public data: any = {};
+  public data: any = {
+    nombre: '',
+    asunto: '',
+    mensaje: '',
+    correo: '',
+    tel: ''
+  };
   public contactoForm: FormGroup;
   public errorMessages: any = {};
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private contactoService: ContactoService
   ) { }
 
   ngOnInit() {
@@ -31,7 +40,6 @@ export class ContactoComponent implements OnInit {
 
   doContact() {
     // tslint:disable-next-line:no-var-keyword
-    var b: any;
     console.log('Form: ', this.contactoForm);
     this.showMessages();
     if (!this.contactoForm.valid) {
@@ -46,10 +54,27 @@ export class ContactoComponent implements OnInit {
       nombre:   ${this.data.nombre}
       correo:   ${this.data.correo}
       telefono: ${this.data.tel}`)}`;
-      b = document.createElement('a');
-      b.setAttribute('href', str_href);
-      b.innerHTML  = 'test value';
-      b.click();
+      const _data = {
+        correo: `${this.data.correo}`,
+        asunto: `${this.data.asunto}`,
+        mensaje: `${this.data.mensaje}
+        contacto:
+        nombre:   ${this.data.nombre}
+        correo:   ${this.data.correo}
+        telefono: ${this.data.tel}`
+
+      };
+      this.contactoService.sendMail('contacto', _data)
+      .then(response => {
+       if (environment.debug) { console.log(response); }
+        if (!response.fun.access) {
+          let b: any;
+          b = document.createElement('a');
+          b.setAttribute('href', str_href);
+          b.innerHTML  = 'test value';
+          b.click();
+        }
+      });
     }
   }
 
