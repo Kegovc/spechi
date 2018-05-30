@@ -1,3 +1,4 @@
+import { SliteService } from './../shared/services/slite.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./novedades.component.scss']
 })
 export class NovedadesComponent implements OnInit {
-
-  constructor() { }
+  public slites: any[] = [];
+  constructor(
+    private sliteService: SliteService
+  ) { }
 
   ngOnInit() {
+    this.sliteService.getSlites()
+    .then(response => {
+      console.log(response);
+      if (response.fun.access) {
+        this.slites = response.fun.ls;
+      }
+    });
   }
+
 
 }

@@ -13,7 +13,7 @@ export class ProductosComponent implements OnInit {
       descripcion: `Administración de procesos de Compras, Ventas, Inventarios, Cobranza y Cuentas por pagar.`,
       comentario: `Elige la edición que mejor se adapte al volumen de información y al crecimiento de tu empresa: Start, Pro, Premium.`,
       img: `contpaqi_comercial.png`,
-      video: `https://www.youtube.com/embed/wgBEeE9sKSQ` 
+      video: `https://www.youtube.com/embed/_PM-edSo328`
     },
     {
       titulo: `CONTPAQi® Nóminas`,

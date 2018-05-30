@@ -4,7 +4,9 @@ import { CarouselModule } from 'ngx-bootstrap';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContainerComponent } from './container/container.component';
@@ -15,6 +17,7 @@ import { SafePipe } from './shared/pipes/safe.pipe';
 import { ContactoComponent } from './contacto/contacto.component';
 import { CotizacionComponent } from './cotizacion/cotizacion.component';
 import { ValidatedInputDirective } from './shared/directives/validated-input.directive';
+import { SliteService } from './shared/services/slite.service';
 
 
 @NgModule({
@@ -35,9 +38,11 @@ import { ValidatedInputDirective } from './shared/directives/validated-input.dir
     CarouselModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
-  providers: [],
+  providers: [SliteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

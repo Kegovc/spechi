@@ -2,7 +2,8 @@
 $spechi-color: #6c101c;
 $spechi-font-family: Trocchi;
 
-body{
+.containert{
+  max-width: 100%!important;
   background-color: $spechi-color !important;
   font-family: $spechi-font-family !important;
 }

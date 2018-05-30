@@ -6,17 +6,8 @@
   <div class="row  row-novedades">
     <div class="carousel-novedades col-lg-6 col-sm-8 offset-sm-2  offset-lg-3">
         <carousel>
-            <slide>
-              <img  class="align-middle" src="assets/recursos/Promoción 1.jpg"  style="display: block; width: 98%; margin: auto ">
-            </slide>
-            <slide>
-              <img  class="align-middle" src="assets/recursos/Promoción 2.jpg"  style="display: block; width: 98%; margin: auto ">
-            </slide>
-            <slide>
-              <img  class="align-middle" src="assets/recursos/Promoción 3.jpg"  style="display: block; width: 98%; margin: auto ">
-            </slide>
-            <slide>
-              <img  class="align-middle" src="assets/recursos/Promoción 4.png"  style="display: block; width: 98%; margin: auto ">
+            <slide *ngFor="let slite of slites">
+              <img  class="align-middle" src="{{slite}}"  style="display: block; width: 98%; margin: auto ">
             </slide>
           </carousel>
     </div>
@@ -24,9 +15,9 @@
 
 <div class="row  row-novedades-btn">
   <div class="col-lg-3 col-sm-6">
-    <a href="http://www.google.com"><img class="img-btn-nov" src="assets/img/academia tinto.png" alt=""></a>
+    <a href="http://spechi.mx/academia/"><img class="img-btn-nov" src="assets/img/academia tinto.png" alt=""></a>
   </div>
   <div class="col-lg-3  offset-lg-6 col-sm-6">
-    <a href="http://www.google.com"><img class="img-btn-nov" src="assets/img/blog tinto.png" alt=""></a>
+    <a href="http://spechi.mx/estrategias/"><img class="img-btn-nov" src="assets/img/blog tinto.png" alt=""></a>
   </div>
 </div>
